@@ -11,6 +11,10 @@ Automated scalping bot for MetaTrader 5 using EMA 8/34 crossover with ATR-based 
 - `bot_live/export_trades.py` — CSV trade export
 - `backtest_scalping/` — Original backtest framework (EMA_CROSS only, single-pair)
 - `BACKTEST_RESULTS.txt` — Original EMA-only backtest summary
+- `backtest_results/` — Structured JSON data for all backtest runs:
+  - `multi_strategy_comparison.json` — 5 strategies on 3 pairs
+  - `v2_comparison.json` — ADAPTIVE v2.0 vs v2.1 (correct 4-bar logic)
+  - `5pct_risk.json` — 5% risk results + max DD
 
 ## 5 Strategies
 
