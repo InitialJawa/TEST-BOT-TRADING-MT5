@@ -1,0 +1,48 @@
+{
+  "meta": {
+    "description": "Multi-strategy comparison — fixed backtest with END@SL (realistic)",
+    "capital": 300,
+    "period": "Oct 2025 - Jun 2026",
+    "lots": {
+      "XAUUSD": 0.03,
+      "US30": 0.20,
+      "JP225": 5.0
+    },
+    "params": "EMA 8/34, SL=0.3ATR, TP=0.6ATR, trail=0.2ATR",
+    "date_saved": "2026-06-11",
+    "notes": "Uses 1-bar momentum for MOMENTUM strategy. ADAPTIVE uses 4-bar mom (correct). EARLY BUGGY VERSION — see v2_comparison.json for corrected ADAPTIVE with 4-bar mom"
+  },
+  "strategies": {
+    "ADAPTIVE": {
+      "XAUUSD": {"trades": 78, "win_pct": 51.3, "pf": 1.67, "adj_net": 54.44, "max_dd_pct": 3.9},
+      "US30":   {"trades": 37, "win_pct": 51.4, "pf": 1.84, "adj_net": 26.51},
+      "JP225":  {"trades": 137, "win_pct": 47.4, "pf": 1.61, "adj_net": 17.20},
+      "total_adj_net": 98.15
+    },
+    "EMA_CROSS": {
+      "XAUUSD": {"trades": 72, "win_pct": 51.4, "pf": 1.58, "adj_net": 72.77, "max_dd_pct": 6.1},
+      "US30":   {"trades": 19, "win_pct": 42.1, "pf": 1.00, "adj_net": 0.02},
+      "JP225":  {"trades": 45, "win_pct": 60.0, "pf": 3.09, "adj_net": 14.81},
+      "total_adj_net": 87.60
+    },
+    "MOMENTUM": {
+      "XAUUSD": {"trades": 6, "win_pct": 0.0, "pf": 0.00, "adj_net": -13.69, "max_dd_pct": 4.5},
+      "US30":   {"trades": 50, "win_pct": 60.0, "pf": 2.62, "adj_net": 73.83},
+      "JP225":  {"trades": 50, "win_pct": 48.0, "pf": 1.52, "adj_net": 7.43},
+      "total_adj_net": 67.57
+    },
+    "PULLBACK": {
+      "XAUUSD": {"trades": 118, "win_pct": 56.8, "pf": 2.28, "adj_net": 378.68, "max_dd_pct": 5.1},
+      "US30":   {"trades": 164, "win_pct": 59.1, "pf": 2.37, "adj_net": 371.74},
+      "JP225":  {"trades": 48, "win_pct": 52.1, "pf": 1.78, "adj_net": 12.71},
+      "total_adj_net": 763.13,
+      "warning": "94% of XAUUSD profit from P1 only — overfit risk. NOT deployed live."
+    },
+    "TREND_RE": {
+      "XAUUSD": {"trades": 93, "win_pct": 49.5, "pf": 1.54, "adj_net": 60.23, "max_dd_pct": 4.7},
+      "US30":   {"trades": 49, "win_pct": 49.0, "pf": 1.72, "adj_net": 32.27},
+      "JP225":  {"trades": 9, "win_pct": 22.2, "pf": 0.64, "adj_net": -0.41},
+      "total_adj_net": 92.09
+    }
+  }
+}

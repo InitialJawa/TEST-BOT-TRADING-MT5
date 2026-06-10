@@ -1,0 +1,34 @@
+{
+  "meta": {
+    "description": "ADAPTIVE v2.1 with 5% risk per trade",
+    "capital": 300,
+    "risk_pct": 5.0,
+    "risk_dollars": 15.00,
+    "regime_threshold": 0.7,
+    "period": "Oct 2025 - Jun 2026 (8 months)",
+    "params": "EMA 8/34, SL=0.3ATR, TP=0.6ATR, trail=0.2ATR, mom4 threshold=0.0005",
+    "date_saved": "2026-06-11",
+    "lots_note": "Lots calculated as: round(CAPITAL * risk_pct / 100 / (ATR*0.3 * pnl_pp), 2)"
+  },
+  "lots": {
+    "XAUUSD": {"lot": 0.06, "risk_per_trade": 15.51, "dollar_per_point": 6.0},
+    "US30":   {"lot": 0.64, "risk_per_trade": 15.05, "dollar_per_point": 0.64},
+    "JP225":  {"lot": 45.75, "risk_per_trade": 15.00, "dollar_per_point": 0.285}
+  },
+  "results": {
+    "XAUUSD": {
+      "trades": 28, "wr": 42.9, "pf": 1.28, "adj_net": 25.08, "max_dd_pct": 8.0, "max_dd_dollars": 24.0, "final_balance": 320.06
+    },
+    "US30": {
+      "trades": 30, "wr": 50.0, "pf": 1.78, "adj_net": 60.47, "max_dd_pct": 8.6, "max_dd_dollars": 25.80, "final_balance": 360.47
+    },
+    "JP225": {
+      "trades": 21, "wr": 47.6, "pf": 1.58, "adj_net": 13.79, "max_dd_pct": 3.8, "max_dd_dollars": 11.40, "final_balance": 312.15
+    },
+    "total_adj_net": 99.34,
+    "total_per_month": 12.42,
+    "total_roi_per_month_pct": 4.1,
+    "max_dd_worst_pct": 8.6,
+    "max_dd_worst_dollars": 25.80
+  }
+}
