@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+*.pyo
+logs/
+state_*.json
+trades.csv
+.env

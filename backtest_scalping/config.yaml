@@ -1,0 +1,30 @@
+# ============================================================
+# Backtest Configuration — Scalping Bot XAUUSD M5
+# ============================================================
+
+symbol: "XAUUSDm"
+timeframe: "M5"              # M1, M5, M15, M30, H1, H4, D1
+lot_size: 0.01
+initial_balance: 10000.0
+
+# Date range (kosongkan untuk data terbaru)
+start_date: "2025-10-01"
+end_date: "2026-06-01"
+
+# ---- Strategy Parameters ----
+strategy:
+  name: "ema_cross_scalp"
+  ema_fast: 3
+  ema_slow: 7
+  atr_period: 14
+  sl_atr_mult: 0.6            # Stop loss = 0.6 x ATR
+  tp_atr_mult: 1.0            # Take profit = 1.0 x ATR (1:1 risk-reward)
+  use_trailing: true
+  trailing_activation: 0.3    # Aktifkan trailing setelah profit 0.3 x ATR
+  max_spread_points: 300      # Skip entry jika spread > 300 points
+
+# ---- Risk Management ----
+risk:
+  max_daily_loss_pct: 5.0     # Stop trading jika loss > 5% dalam sehari
+  max_consecutive_losses: 3   # Stop sementara setelah N loss beruntun
+  circuit_breaker_pct: 15.0   # Stop total jika drawdown > 15%
