@@ -1,0 +1,50 @@
+symbols:
+- name: XAUUSDm
+  strategy_type: TREND_RE
+  lot_size: 0.01
+  magic_number: 25062036
+  comment: SCALP_XAU
+  max_spread_points: 300
+  timeframe: M5
+  session_filter:
+    enabled: false
+    open_utc: 07:00
+    close_utc: '22:00'
+- name: US30m
+  strategy_type: TREND_RE
+  lot_size: 0.0
+  magic_number: 25062037
+  comment: SCALP_US30
+  max_spread_points: 300
+  timeframe: M5
+  session_filter:
+    enabled: true
+    open_utc: '13:30'
+    close_utc: '20:00'
+- name: JP225m
+  strategy_type: TREND_RE
+  lot_size: 0.09
+  magic_number: 25062038
+  comment: SCALP_JP225
+  max_spread_points: 300
+  timeframe: M5
+  session_filter:
+    enabled: true
+    open_utc: 00:00
+    close_utc: 08:00
+strategy:
+  ema_fast: 8
+  ema_slow: 34
+  atr_period: 14
+  sl_atr_mult: 0.3
+  tp_atr_mult: 0.6
+  trailing_activation: 0.2
+  momentum_threshold: 0.0005
+risk:
+  max_daily_loss_pct: 5.0
+  max_consecutive_losses: 5
+  max_positions: 3
+  circuit_breaker_dd_pct: 15.0
+mode: instant
+test_mode: false
+poll_interval_seconds: 5
