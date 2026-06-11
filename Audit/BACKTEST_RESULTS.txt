@@ -1,0 +1,107 @@
+====================================================================
+BACKTEST RESULTS — Scalping Bot XAUUSD M5
+====================================================================
+Strategi: EMA 8/34 Cross + ATR SL/TP + Trailing Stop
+Parameter: SL=0.3xATR, TP=0.6xATR, Trail=0.2xATR
+Lot: 0.01 ($10k akun demo)
+====================================================================
+
+
+====================================================================
+1. XAUUSDm (Gold) — M5
+====================================================================
+
+In-Sample (Mar 2026 - Jun 2026)
+  Bars:      17,629
+  Trades:    78
+  Win Rate:  50.0%
+  PF:        1.66
+  Net:       +$63.16
+  Max DD:    0.17%
+  Avg Bars:  0.1
+
+Out-of-Sample (Oct 2025 - Feb 2026)
+  Bars:      23,630
+  Trades:    67
+  Win Rate:  50.7%
+  PF:        1.55
+  Net:       +$21.33
+  Max DD:    0.08%
+  Avg Bars:  0.1
+
+Total (Oct 2025 - Jun 2026)
+  Trades:    145
+  Win Rate:  50.3%
+  PF:        1.60
+  Net:       +$84.49
+  Max DD:    0.17%
+
+
+====================================================================
+2. US30m (Dow Jones) — M5
+====================================================================
+
+Periode: Oct 2025 - Jun 2026
+  Bars:      48,589
+  Trades:    71
+  Win Rate:  54.9%
+  PF:        1.60
+  Net:       +$130.39
+  Max DD:    0.41%
+
+
+====================================================================
+3. GBPJPYm — M5
+====================================================================
+
+Periode: Oct 2025 - Jun 2026
+  Bars:      51,079
+  Trades:    8
+  Win Rate:  25.0%
+  PF:        0.42
+  Net:       -$0.06
+  Max DD:    0.00%
+
+  >> TIDAK COCOK: ATR M5 terlalu kecil, SL termakan spread
+
+
+====================================================================
+4. Multi-Strategy Comparison (XAUUSD IS + OOS)
+====================================================================
+
+                        Trades   WR%     PF      Net
+EMA Cross Only          145      50.3%   1.60    +$84.49
+Multi (Cross+Pull+BO)   176      46.0%   1.31    +$61.28
+
+  >> KESIMPULAN: EMA Cross Only LEBIH BAIK
+
+
+====================================================================
+5. ORIGINAL OPTIMIZATION RESULTS (XAUUSD - RESULT.md)
+====================================================================
+
+Pass 1 — Grid Search EMA (SL/TP=0.6/1.0, trail=0.3 ATR)
+  Data: 1 Mar - 1 Mei 2026 (46k bars)
+  Best EMA: 8/34 (PF=1.05, Sharpe=5.74)
+
+Pass 2 — Grid Search SL/TP/Trail (EMA 8/34 fixed)
+  Data: 1 Mar - 1 Mei 2026
+  Best: SL=0.3, TP=0.6, Trail=0.2 (PF=1.88, Net +$259.91)
+
+OOS Validation (Oct 2025 - Feb 2026)
+  Best params (SL0.3 TP0.6 T0.2): 874 trades, WR 46.2%, PF 1.38, Net +$278.51
+
+
+====================================================================
+ACTIVE CONFIG — bot_live/config.yaml
+====================================================================
+
+Symbols:
+  XAUUSDm:  lot 0.01, magic 25062026
+  US30m:    lot 0.01, magic 25062027
+
+Strategy: EMA 8/34, SL=0.3, TP=0.6, Trail=0.2
+Mode: instant, poll 5s
+Risk: max_daily_loss 5%, max_consecutive_loss 5, CB 15%
+
+====================================================================

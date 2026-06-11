@@ -283,8 +283,6 @@ class ScalpingBot:
     def _tick_handler(self, handler):
         if self._check_global_circuit():
             return
-        if handler.lot <= 0:
-            return
 
         self._daily_reset(handler)
 

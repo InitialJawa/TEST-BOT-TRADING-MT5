@@ -40,7 +40,7 @@ def send_order(side: str, symbol: str, price: float, sl: float, tp: float, lot: 
 
 
 def send_close(side: str, symbol: str, entry: float, exit_px: float, pnl: float, reason: str):
-    emoji = "(GREEN)" if pnl > 0 else "(RED)"
+    emoji = "≡ƒƒó" if pnl > 0 else "≡ƒö┤"
     send(
         f"{emoji} <b>ORDER CLOSED</b>\n"
         f"<b>{side.upper()}</b> {symbol}\n"
@@ -51,13 +51,14 @@ def send_close(side: str, symbol: str, entry: float, exit_px: float, pnl: float,
 
 
 def send_error(msg: str):
-    send(f"<b>BOT ERROR</b>\n{msg}")
+    send(f"ΓÜá∩╕Å <b>BOT ERROR</b>\n{msg}")
 
 
 def send_startup(config: dict):
     send(
-        f"<b>Scalping Bot Started</b>\n"
-        f"Symbols: {config.get('symbols', '?')}\n"
-        f"Strategy: EMA {config['config']['strategy']['ema_fast']}/{config['config']['strategy']['ema_slow']}\n"
-        f"SL/TP: {config['config']['strategy']['sl_atr_mult']}/{config['config']['strategy']['tp_atr_mult']} ATR"
+        f"≡ƒñû <b>Scalping Bot Started</b>\n"
+        f"Symbol: {config['symbol']} M5\n"
+        f"Strategy: EMA {config['strategy']['ema_fast']}/{config['strategy']['ema_slow']}\n"
+        f"SL/TP: {config['strategy']['sl_atr_mult']}/{config['strategy']['tp_atr_mult']} ATR\n"
+        f"Lot: {config['lot_size']}"
     )

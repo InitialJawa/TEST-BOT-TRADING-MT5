@@ -1,4 +1,4 @@
-﻿"""
+"""
 Scalping Bot ΓÇö Multi-Symbol Live Trading Engine
 EMA 8/34 Cross + ATR SL/TP + Trailing Stop
 """

@@ -1,0 +1,52 @@
+# ============================================================
+# Live Bot Configuration — Multi-Symbol Scalping
+# ============================================================
+
+symbols:
+  - name: "XAUUSDm"
+    strategy_type: "MOMENTUM"
+    lot_size: 0.1
+    magic_number: 25062026
+    comment: "SCALP_XAU"
+    max_spread_points: 300
+    timeframe: "M5"
+
+  - name: "US30m"
+    strategy_type: "PULLBACK"
+    lot_size: 0.1
+    magic_number: 25062027
+    comment: "SCALP_US30"
+    max_spread_points: 300
+    timeframe: "M5"
+
+  - name: "JP225m"
+    strategy_type: "TREND_RE"
+    lot_size: 47.0
+    magic_number: 25062028
+    comment: "SCALP_JP225"
+    max_spread_points: 300
+    timeframe: "M5"
+
+# ---- Strategy Parameters (optimized) ----
+strategy:
+  ema_fast: 8
+  ema_slow: 34
+  atr_period: 14
+  sl_atr_mult: 0.3
+  tp_atr_mult: 0.6
+  trailing_activation: 0.2
+  momentum_threshold: 0.0005
+
+# ---- Risk Management ----
+risk:
+  max_daily_loss_pct: 5.0
+  max_consecutive_losses: 5
+  max_positions: 3
+  circuit_breaker_dd_pct: 15.0
+
+# ---- Mode ----
+mode: "instant"
+test_mode: false
+
+# ---- Polling ----
+poll_interval_seconds: 5
